@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000">
+<defs>
+<marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#333"/></marker>
+<marker id="tri" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 Z" fill="white" stroke="#333" stroke-width="1.5"/></marker>
+<style>.head{fill:#e9eef5;stroke:#222;stroke-width:2}.box{fill:#fff;stroke:#222;stroke-width:2}.title{font:bold 22px Arial}.text{font:16px Arial}.small{font:italic 14px Arial;fill:#555}.rel{stroke:#333;stroke-width:2;fill:none;marker-end:url(#arr)}.inh{stroke:#333;stroke-width:2;fill:white;marker-end:url(#tri)}</style>
+</defs>
+<rect width="1400" height="1000" fill="white"/>
+<text x="700" y="42" text-anchor="middle" style="font:bold 30px Arial">Diagrama de Classes — Sistema de Atendimento para Barbearia</text>
+<text x="700" y="70" text-anchor="middle" class="small">Modelo UML atualizado e alinhado às classes do projeto POO em Python</text>
+<rect class="head" x="500" y="100" width="400" height="55"/><rect class="box" x="500" y="155" width="400" height="190"/>
+<text class="title" x="700" y="136" text-anchor="middle">Pessoa &lt;&lt;abstract&gt;&gt;</text><text class="text" x="520" y="185">- _nome : str</text><text class="text" x="520" y="212">- _telefone : str</text><line x1="500" y1="228" x2="900" y2="228" stroke="#222"/><text class="text" x="520" y="257">+ nome : property</text><text class="text" x="520" y="284">+ telefone : property</text><text class="text" x="520" y="311">+ exibir_dados() : str {abstract}</text>
+<rect class="head" x="100" y="430" width="400" height="55"/><rect class="box" x="100" y="485" width="400" height="155"/><text class="title" x="300" y="466" text-anchor="middle">Cliente</text><text class="text" x="120" y="515">- fidelidade : bool</text><line x1="100" y1="530" x2="500" y2="530" stroke="#222"/><text class="text" x="120" y="560">+ exibir_dados() : str</text><text class="text" x="120" y="588">+ __init__(nome, telefone, fidelidade)</text>
+<rect class="head" x="900" y="430" width="400" height="55"/><rect class="box" x="900" y="485" width="400" height="155"/><text class="title" x="1100" y="466" text-anchor="middle">Barbeiro</text><text class="text" x="920" y="515">- especialidade : str</text><line x1="900" y1="530" x2="1300" y2="530" stroke="#222"/><text class="text" x="920" y="560">+ exibir_dados() : str</text><text class="text" x="920" y="588">+ __init__(nome, telefone, especialidade)</text>
+<line class="inh" x1="300" y1="430" x2="600" y2="345"/><line class="inh" x1="1100" y1="430" x2="800" y2="345"/>
+<rect class="head" x="80" y="760" width="400" height="55"/><rect class="box" x="80" y="815" width="400" height="145"/><text class="title" x="280" y="796" text-anchor="middle">Servico</text><text class="text" x="100" y="845">- descricao : str</text><text class="text" x="100" y="870">- preco : float</text><text class="text" x="100" y="895">- duracao_min : int</text><line x1="80" y1="910" x2="480" y2="910" stroke="#222"/><text class="text" x="100" y="938">+ exibir_servico() : str</text>
+<rect class="head" x="500" y="690" width="400" height="55"/><rect class="box" x="500" y="745" width="400" height="190"/><text class="title" x="700" y="726" text-anchor="middle">Agendamento</text><text class="text" x="520" y="775">- cliente : Cliente</text><text class="text" x="520" y="802">- barbeiro : Barbeiro</text><text class="text" x="520" y="829">- servico : Servico</text><text class="text" x="520" y="856">- data_hora : datetime</text><line x1="500" y1="872" x2="900" y2="872" stroke="#222"/><text class="text" x="520" y="900">+ resumo_atendimento() : str</text>
+<line class="rel" x1="500" y1="550" x2="500" y2="790"/><text class="small" x="510" y="575">1</text><text class="small" x="510" y="780">1</text>
+<line class="rel" x1="900" y1="550" x2="900" y2="790"/><text class="small" x="875" y="575">1</text><text class="small" x="875" y="780">1</text>
+<line class="rel" x1="480" y1="850" x2="500" y2="850"/><text class="small" x="450" y="835">1</text><text class="small" x="505" y="835">1</text>
+<text x="700" y="975" text-anchor="middle" class="small">Herança: Cliente e Barbeiro → Pessoa | Associações: Agendamento → Cliente, Barbeiro e Servico</text>
+</svg>
